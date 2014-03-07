@@ -1,0 +1,11 @@
+{
+  "title": "A Book",
+  "author": {
+    "firstname": "Some",
+    "lastname": "Person"
+  },
+  "chapters": [
+    "./chapter/chap1.bmd",
+    "./chapter/chap2.bmd"
+  ]
+}

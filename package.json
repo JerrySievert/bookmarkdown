@@ -1,0 +1,22 @@
+{
+  "name": "bookmarkdown",
+  "version": "0.1.0",
+  "description": "books in markdown +",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "markdown",
+    "book",
+    "docbook"
+  ],
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "marked": "^0.3.1"
+  },
+  "devDependencies": {
+    "vows": "^0.7.0"
+  }
+}
