@@ -7,7 +7,7 @@ var parser = require('../lib/parser');
 vows.describe('Parser').addBatch({
   'When a book.json is read': {
     topic: function ( ) {
-      var book = fs.readFileSync(__dirname + '/input/parser-book.json', 'utf8');
+      var book = fs.readFileSync(__dirname + '/input/book.json', 'utf8');
 
       return book;
     },
