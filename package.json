@@ -14,7 +14,9 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "marked": "^0.3.1"
+    "marked": "^0.3.1",
+    "optimist": "^0.6.1",
+    "ncp": "^0.5.0"
   },
   "devDependencies": {
     "vows": "^0.7.0"
