@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var argv = require('optimist')
+    .default('theme', 'default')
+    .default('out', './out')
+    .argv;
+var marked = require('marked'),
+    book   = require('../lib/book');
+
+var fs = require('fs');
+
+
