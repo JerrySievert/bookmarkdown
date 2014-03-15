@@ -14,7 +14,7 @@ vows.describe('HTML').addBatch({
       return results;
     },
     'the html should be correct': function (topic) {
-      var expected = "<div class=\"toc\">\n  <ul><li>0. <a href=\"#chapter-1\">Chapter 1</a></li><li>1. <a href=\"#chapter-2\">Chapter 2</a></li></ul>\n</div>";
+      var expected = "<div class=\"toc\">\n  <ul><li>1. <a href=\"#chapter-1\">Chapter 1</a></li><li>2. <a href=\"#chapter-2\">Chapter 2</a></li></ul>\n</div>";
       assert.equal(topic, expected);
     }
   },
