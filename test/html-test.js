@@ -24,7 +24,7 @@ vows.describe('HTML').addBatch({
       return results;
     },
     'the html should be correct': function (topic) {
-      var expected = "<div class=\"chapter\">\n  <a link=\"chapter-1\"></a>\n  <h2 class=\"chapter-title\">Chapter 1</h2>\n  <div class=\"chapter-text\">\n    <p>In the beginning, there was the book.</p>\n\n  </div>\n</div>";
+      var expected = "<div class=\"chapter\">\n  <a name=\"chapter-1\"></a>\n  <h2 class=\"chapter-title\">Chapter 1</h2>\n  <div class=\"chapter-text\">\n    <p>In the beginning, there was the book.</p>\n\n  </div>\n</div>";
 
       assert.equal(topic, expected);
     }
