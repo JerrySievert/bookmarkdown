@@ -6,3 +6,38 @@ body {
   font-size: 16px;
   line-height: 1.8em;
 }
+
+.title {
+  text-align: center;
+  margin-top: 64px;
+}
+
+.book-title {
+  font-size: 72px;
+}
+
+.book-author {
+  font-size: 36px;
+}
+
+.toc {
+  margin-left: 150px;
+  margin-top: 100px;
+}
+
+.toc ul {
+  list-style-type: none;
+}
+.chapter {
+  margin-top: 64px;
+}
+
+.chapter-text::first-letter {
+  font-size: 1.5em;
+}
+
+.chapter-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 24px;
+}
