@@ -3,10 +3,17 @@
 var argv = require('optimist')
     .default('theme', 'default')
     .default('out', './out')
+    .demand('book')
+    .usage('Convert BookMarkDown to HTML\nUsage $0')
+    .describe('theme', 'theme to use')
+    .describe('out', 'output directory')
+    .describe('config', 'optional configuration file')
+    .describe('book', 'bookmarkdown file')
     .argv;
 
 var marked = require('marked'),
-    book   = require('../lib/book');
+    book   = require('../lib/book'),
+    html   = require('../lib/conversion/html');
 
 var fs   = require('fs'),
     util = require('util'),
@@ -47,19 +54,32 @@ if (typeof(config.theme) === 'object') {
   process.exit(1);
 }
 
-ncp.ncp(themeDir, argv.out + "/", function (err) {
+ncp.ncp(__dirname + "/../" + themeDir, argv.out + "/", function (err) {
   if (err) {
     console.log("Error: unable to copy theme");
     process.exit(1);
   }
-  console.log("done copy: " + themeDir);
+  processBook(argv.book, argv.out + "/");
 });
 
 
 
 function processBook(bookFile, outDirectory) {
+  var results = book.readBook(bookFile);
+  var toc = html.buildTOC(results);
+  var chapters = [ ];
 
+console.log(toc);
+  for (var i = 0; i < results.chapters.length; i++) {
+    chapters.push({ text: html.buildChapter(results.chapters[i]) });
+  }
+
+  var outIndex = html.buildIndex({
+    title: results.title,
+    author: results.author.firstname + " " + results.author.lastname,
+    chapters: chapters,
+    table: toc
+  });
+
+  fs.writeFileSync(outDirectory + "/index.html", outIndex, 'utf8');
 }
-
-
-console.log(config);
