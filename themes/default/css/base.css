@@ -1,4 +1,8 @@
 body {
   background-color: white;
   color: black;
+  margin: 0px auto;
+  width: 950px;
+  font-size: 16px;
+  line-height: 1.8em;
 }
