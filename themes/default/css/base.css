@@ -30,9 +30,10 @@ body {
 }
 .chapter {
   margin-top: 64px;
+  line-height: 2em;
 }
 
-.chapter-text::first-letter {
+.chapter-text p::first-letter {
   font-size: 1.5em;
 }
 
