@@ -65,10 +65,12 @@ pre {
   padding: 0px 24px;
   max-width: 800px;
   white-space: pre-wrap;
+  line-height: 20px;
+  background-color: #eee;
+  margin-left: 24px;
 }
 code {
   font-family: Source Code Pro, Consolas, Monaco, Andale Mono, monospace;
-  line-height: 19px;
   font-size: 13px;
 }
 aside {
