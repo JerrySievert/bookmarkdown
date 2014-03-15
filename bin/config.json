@@ -1,0 +1,7 @@
+{
+  "themes": {
+    "default": "./themes/default"
+  },
+  "theme": "default",
+  "format": "html"
+}

@@ -4,19 +4,24 @@
   "description": "books in markdown +",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vows --spec"
   },
   "keywords": [
     "markdown",
     "book",
     "docbook"
   ],
-  "author": "",
+  "author": "Jerry Sievert <code@legitimatesounding.com>",
+  "preferGlobal": true,
+  "bin": {
+    "bmd2html": "./bin/bmd2html"
+  },
   "license": "BSD",
   "dependencies": {
     "marked": "^0.3.1",
     "optimist": "^0.6.1",
-    "ncp": "^0.5.0"
+    "ncp": "^0.5.0",
+    "handlebars": "^2.0.0-alpha.2"
   },
   "devDependencies": {
     "vows": "^0.7.0"

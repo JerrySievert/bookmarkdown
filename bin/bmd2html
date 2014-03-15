@@ -4,9 +4,62 @@ var argv = require('optimist')
     .default('theme', 'default')
     .default('out', './out')
     .argv;
+
 var marked = require('marked'),
     book   = require('../lib/book');
 
-var fs = require('fs');
+var fs   = require('fs'),
+    util = require('util'),
+    ncp  = require('ncp');
+
+var config = require('./config.json');
 
 
+// read a configuration file if one is passed in
+if (argv.config) {
+  try {
+    var newConfig = require(argv.config);
+
+    util._extend(config, newConfig);
+  } catch (err) {
+    console.log("Error: unable to open configuration file " + argv.config);
+    process.exit(1);
+  }
+}
+
+// create the output directory
+try {
+  fs.mkdirSync(argv.out);
+} catch (err) {
+  console.log("Error: unable to create output directory " + argv.out);
+  process.exit(1);
+}
+
+// copy the theme directory over to the output directory
+var themeDir;
+
+if (typeof(config.theme) === 'object') {
+  themeDir = config.theme.directory;
+} else if (config.themes[argv.theme]) {
+  themeDir = config.themes[argv.theme];
+} else {
+  console.log("Error: unable to find theme " + argv.theme);
+  process.exit(1);
+}
+
+ncp.ncp(themeDir, argv.out + "/", function (err) {
+  if (err) {
+    console.log("Error: unable to copy theme");
+    process.exit(1);
+  }
+  console.log("done copy: " + themeDir);
+});
+
+
+
+function processBook(bookFile, outDirectory) {
+
+}
+
+
+console.log(config);
