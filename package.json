@@ -14,7 +14,7 @@
   "author": "Jerry Sievert <code@legitimatesounding.com>",
   "preferGlobal": true,
   "bin": {
-    "bmd2html": "./bin/bmd2html"
+    "bmd2html": "./bin/bmd2html",
     "initbmd": "./bin/initbmd"
   },
   "license": "BSD",
