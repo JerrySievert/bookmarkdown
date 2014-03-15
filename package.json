@@ -15,6 +15,7 @@
   "preferGlobal": true,
   "bin": {
     "bmd2html": "./bin/bmd2html"
+    "initbmd": "./bin/initbmd"
   },
   "license": "BSD",
   "dependencies": {

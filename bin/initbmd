@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+
+if (process.argv.length !== 3) {
+  console.log("Initialize BookMarkDown Book\nUsage initbmd bookname\n\nMissing required argument: bookname");
+  process.exit(1);
+}
+
+var outDir = "./" + process.argv.pop();
+
+// create the output directory
+try {
+  fs.mkdirSync(outDir);
+} catch (err) {
+  console.log("Error: unable to create output directory " + outDir);
+  process.exit(1);
+}
+
+fs.mkdirSync(outDir + "/chapters");
+
+var book = {
+  "title": "Some Book",
+  "author": {
+    "firstname": "Some",
+    "lastname": "Person"
+  },
+  "chapters": [
+    "chapters/chapter1.bmd"
+  ]
+};
+
+var chapter = {
+  "title": "Chapter Title"
+};
+
+fs.writeFileSync(outDir + "/book.json", JSON.stringify(book), 'utf8');
+fs.writeFileSync(outDir + "/chapters/chapter1.bmd", "%%%\n" + JSON.stringify(chapter) + "\n%%%\nChapter Text\n", 'utf8');
