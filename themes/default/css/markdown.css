@@ -68,6 +68,7 @@ pre {
   line-height: 20px;
   background-color: #eee;
   margin-left: 24px;
+  margin-bottom: 24px;
 }
 code {
   font-family: Source Code Pro, Consolas, Monaco, Andale Mono, monospace;
