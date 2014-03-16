@@ -12,6 +12,8 @@
     </div>
     <!-- toc -->
     {{{table}}}
+    <!-- preface -->
+    {{{preface}}}
     <!-- chapters -->
     {{#each chapters}}
     {{{text}}}

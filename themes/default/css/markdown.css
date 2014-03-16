@@ -63,11 +63,11 @@ p, ul, ol {
 }
 pre {
   padding: 0px 24px;
-  max-width: 800px;
+  max-width: 80%;
   white-space: pre-wrap;
   line-height: 20px;
   background-color: #eee;
-  margin-left: 24px;
+  margin-left: 5%;
   margin-bottom: 24px;
 }
 code {

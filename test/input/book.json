@@ -4,6 +4,7 @@
     "firstname": "Some",
     "lastname": "Person"
   },
+  "preface": "chapter/preface.bmd",
   "chapters": [
     "chapter/chap1.bmd",
     "chapter/chap2.bmd"

@@ -21,14 +21,18 @@ vows.describe('Book').addBatch({
     'there should be two chapters': function (topic) {
       assert.equal(topic.chapters.length, 2);
     },
-    'there should be two entries in the toc': function (topic) {
-      assert.equal(topic.toc.length, 2);
+    'there should be three entries in the toc': function (topic) {
+      assert.equal(topic.toc.length, 3);
     },
-    'the first entry of the toc should be correct': function (topic) {
-      assert.equal(topic.toc[0].title, 'Chapter 1');
+    'the first entry of the toc should be the preface': function (topic) {
+      assert.equal(topic.toc[0].title, 'Preface');
+      assert.equal(topic.toc[0].type, 'preface');
     },
     'the second entry of the toc should be correct': function (topic) {
-      assert.equal(topic.toc[1].title, 'Chapter 2');
+      assert.equal(topic.toc[1].title, 'Chapter 1');
+    },
+    'the third entry of the toc should be correct': function (topic) {
+      assert.equal(topic.toc[2].title, 'Chapter 2');
     }
   }
 }).export(module);

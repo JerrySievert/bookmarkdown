@@ -68,6 +68,11 @@ function processBook(bookFile, outDirectory) {
   var results = book.readBook(bookFile);
   var toc = html.buildTOC(results);
   var chapters = [ ];
+  var preface;
+
+  if (results.preface) {
+    preface = { text: html.buildChapter(results.preface) };
+  }
 
   for (var i = 0; i < results.chapters.length; i++) {
     chapters.push({ text: html.buildChapter(results.chapters[i]) });
@@ -76,6 +81,7 @@ function processBook(bookFile, outDirectory) {
   var outIndex = html.buildIndex({
     title: results.title,
     author: results.author.firstname + " " + results.author.lastname,
+    preface: preface,
     chapters: chapters,
     table: toc
   });
