@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
+var util = require('../lib/util');
 
 if (process.argv.length !== 3) {
   console.log("Initialize BookMarkDown Book\nUsage initbmd bookname\n\nMissing required argument: bookname");
@@ -34,5 +35,5 @@ var chapter = {
   "title": "Chapter Title"
 };
 
-fs.writeFileSync(outDir + "/book.json", JSON.stringify(book), 'utf8');
-fs.writeFileSync(outDir + "/chapters/chapter1.bmd", "%%%\n" + JSON.stringify(chapter) + "\n%%%\nChapter Text\n", 'utf8');
+fs.writeFileSync(outDir + "/book.json", util.renderJSON(null, book), 'utf8');
+fs.writeFileSync(outDir + "/chapters/chapter1.bmd", "%%%\n" + util.renderJSON(null, chapter) + "\n%%%\nChapter Text\n", 'utf8');
