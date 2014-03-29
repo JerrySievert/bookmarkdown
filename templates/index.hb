@@ -8,6 +8,7 @@
   <body>
     <div class="title">
       <h1 class="book-title">{{title}}</h1>
+      {{#if subtitle}}<h2 class="book-subtitle">{{subtitle}}</h2>{{/if}}
       <h2 class="book-author">{{author}}</h2>
     </div>
     <!-- toc -->

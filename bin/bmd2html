@@ -81,6 +81,7 @@ function processBook(bookFile, outDirectory) {
 
   var outIndex = html.buildIndex({
     title: results.title,
+    subtitle: results.subtitle,
     author: results.author.firstname + " " + results.author.lastname,
     preface: preface,
     chapters: chapters,
