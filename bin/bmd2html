@@ -66,17 +66,17 @@ ncp.ncp(themeDir, argv.out + "/", function (err) {
 
 
 function processBook(bookFile, outDirectory) {
-  var results = book.readBook(bookFile);
-  var toc = html.buildTOC(results);
+  var results = book.readBook(bookFile, config);
+  var toc = html.buildTOC(results, config);
   var chapters = [ ];
   var preface;
 
   if (results.preface) {
-    preface = { text: html.buildChapter(results.preface) };
+    preface = { text: html.buildChapter(results.preface, config) };
   }
 
   for (var i = 0; i < results.chapters.length; i++) {
-    chapters.push({ text: html.buildChapter(results.chapters[i]) });
+    chapters.push({ text: html.buildChapter(results.chapters[i], config) });
   }
 
   var outIndex = html.buildIndex({
