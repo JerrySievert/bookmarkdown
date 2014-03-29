@@ -25,9 +25,10 @@ var config = require('./config.json');
 // read a configuration file if one is passed in
 if (argv.config) {
   try {
-    var newConfig = require(argv.config);
+    var newConfig = fs.readFileSync(process.cwd() + "/" + argv.config, 'utf8');
+    newConfig = JSON.parse(newConfig);
 
-    util._extend(config, newConfig);
+    config = util._extend(config, newConfig);
   } catch (err) {
     console.log("Error: unable to open configuration file " + argv.config);
     process.exit(1);
@@ -46,15 +47,15 @@ try {
 var themeDir;
 
 if (typeof(config.theme) === 'object') {
-  themeDir = config.theme.directory;
+  themeDir = process.cwd() + "/" + config.theme.directory;
 } else if (config.themes[argv.theme]) {
-  themeDir = config.themes[argv.theme];
+  themeDir = __dirname + "/../" + config.themes[argv.theme];
 } else {
   console.log("Error: unable to find theme " + argv.theme);
   process.exit(1);
 }
 
-ncp.ncp(__dirname + "/../" + themeDir, argv.out + "/", function (err) {
+ncp.ncp(themeDir, argv.out + "/", function (err) {
   if (err) {
     console.log("Error: unable to copy theme");
     process.exit(1);
