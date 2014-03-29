@@ -41,5 +41,20 @@ vows.describe('Parser').addBatch({
         assert.equal(topic.text, "In the beginning, there was the book.");
       }
     }
+  },
+  'When a chapter is read and is missing JSON': {
+    topic: function ( ) {
+      var chapter = fs.readFileSync(__dirname + '/input/chapter/short.bmd', 'utf8');
+
+      return chapter;
+    },
+    'the chapter can be parsed': {
+      topic: function (chapter) {
+        return parser.parseImport(chapter, 'chapter');
+      },
+      'and the resulting text is correct': function (topic) {
+        assert.equal(topic.text, "This is a short chapter!\n");
+      }
+    }
   }
 }).export(module);
