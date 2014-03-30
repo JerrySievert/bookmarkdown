@@ -13,11 +13,13 @@
     </div>
     <!-- toc -->
     {{{table}}}
+    <div class="contents">
     <!-- preface -->
     {{{preface}}}
     <!-- chapters -->
     {{#each chapters}}
     {{{text}}}
     {{/each}}
+    </div>
   </body>
 </html>
