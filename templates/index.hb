@@ -13,6 +13,7 @@
     </div>
     <!-- toc -->
     {{{table}}}
+    <!-- contents -->
     <div class="contents">
     <!-- preface -->
     {{{preface}}}
