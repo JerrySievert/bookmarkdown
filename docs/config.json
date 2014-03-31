@@ -1,0 +1,6 @@
+{
+  "theme": {
+    "directory": "./theme"
+  },
+  "no chapter numbers": true
+}

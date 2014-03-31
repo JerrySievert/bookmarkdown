@@ -1,0 +1,31 @@
+%%%
+{
+  "title":"Introduction"
+}
+%%%
+Welcome to BookMarkDown.  This document will give you an overview of BookMarkDown,
+how it works, how to configure it, and how to publish your own books.
+
+## What is BookMarkDown?
+
+BookMarkDown is a self-publishing system using `JSON` and `MarkDown`.  It
+enables people with a moderate amount of experience with `MarkDown` and `JSON`
+to publish a book with very little work.  BookMarkDown includes themes for HTML
+and PDF output, as well as the ability to customize the look and feel of the
+output.
+
+BookMarkDown is ever-evolving, but aims to be backword-compatible as it grows.
+
+## Installing
+
+Installation is straight-forward as long as you have [Node.js](http://nodejs.org/)
+installed.  BookMarkDown can be installed using the Node Package Manager:
+
+```
+$ npm install -g bookmarkdown
+```
+
+Doing this installs two tools, `initbmd` which creates you a new skeleton copy
+of a book, and `bmd2html` which converts a book into HTML format for display on
+the web.  More formats are in the works, including native support for PDF and
+MOBI.  These will be added as addition commands.

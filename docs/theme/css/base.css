@@ -1,0 +1,64 @@
+.title {
+  height: 72px;
+  background-color: #ddd;
+  margin-top: 0;
+  padding-top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.book-title {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  font-size: 36px;
+}
+
+.book-subtitle {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  font-size: 26px;
+}
+
+.book-author {
+  display: none;
+}
+
+.toc {
+  position: fixed;
+  width: 250px;
+  background-color: #eee;
+  min-height: 100%;
+  margin-top: 72px;
+  z-index: 10;
+}
+
+.toc ul {
+  list-style-type: none;
+  margin-top: 24px;
+}
+
+.contents {
+  position: fixed;
+  overflow-y: scroll;
+  height: 100%;
+  margin-top: 72px;
+  z-index: 0;
+}
+
+.chapter {
+  margin-left: 270px;
+  margin-right: 40px;
+  margin-bottom: 80px;
+  text-align: justify;
+}
+
+.chapter-title {
+  font-size: 36px;
+}
+
+.chapter > h2 {
+  margin-bottom: 24px;
+}

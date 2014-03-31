@@ -1,0 +1,33 @@
+%%%
+{
+  "title": "Anatomy"
+}
+%%%
+A BookMarkDown book is separated into two parts, the `book.json` file, and
+subsequent chapters.  These are matched with a `theme`, which includes styling
+choices and rendered into a final book.
+
+## The Skeleton
+
+The skeleton of a BookMarkDown book is the `book.json` file.  The `book.json`
+file describes the meta aspects of the book, including the title, author, and
+the makeup of the book itself.
+
+This is an example of a BookMarkDown `book.json` file:
+
+```js
+{
+  "title": "BookMarkDown",
+  "subtitle": "Documentation",
+  "author": {
+      "firstname": "Jerry",
+      "lastname": "Sievert"
+  },
+  "preface": "chapters/preface.bmd",
+  "chapters": [
+    "chapters/chapter1.bmd"
+  ]
+}
+```
+
+This defines the title, subtitle, author, preface, and chapters of the book.
