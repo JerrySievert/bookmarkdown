@@ -31,3 +31,24 @@ This is an example of a BookMarkDown `book.json` file:
 ```
 
 This defines the title, subtitle, author, preface, and chapters of the book.
+Each instance of a chapter and a preface is built of a `.bmd` file, a hybrid
+of `JSON` and `MarkDown`.
+
+## `.bmd` Files
+
+`.bmd` files are broken down into two parts: `JSON` and `MarkDown` separated by
+a delimiter, `%%%`.  The `JSON` defines the parameters of the chapter, and the
+`MarkDown` defines the text of the chapter itself.
+
+```
+%%%
+{
+  "title": "Chapter 1 - A Vision"
+}
+%%%
+This is the story of a man and his horse.
+
+## The Horse
+
+Let's begin the story talking about the horse.  I loved him.
+```
