@@ -28,7 +28,8 @@ var book = {
   },
   "chapters": [
     "chapters/chapter1.bmd"
-  ]
+  ],
+  "version": "1.0"
 };
 
 var chapter = {
