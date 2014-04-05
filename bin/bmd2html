@@ -36,9 +36,20 @@ if (argv.config) {
   }
 }
 
+// check to see if the directory exists
+var exists = false;
+try {
+  var stats = fs.statSync(argv.out);
+  exists = stats.isDirectory();
+} catch (err) {
+  // no-op
+}
+
 // create the output directory
 try {
-  fs.mkdirSync(argv.out);
+  if (!exists) {
+    fs.mkdirSync(argv.out);
+  }
 } catch (err) {
   console.log("Error: unable to create output directory " + argv.out);
   process.exit(1);
