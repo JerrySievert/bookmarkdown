@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(http://brick.a.ssl.fastly.net/Source+Code+Pro:400);
 
 * {
   margin: 0;
@@ -75,7 +75,7 @@ p {
   padding-top: 16px;
 }
 pre {
-  padding: 0px 24px;
+  padding: 12px 24px;
   max-width: 80%;
   white-space: pre-wrap;
   line-height: 18px;

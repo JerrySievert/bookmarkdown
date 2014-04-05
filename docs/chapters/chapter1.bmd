@@ -50,5 +50,9 @@ This is the story of a man and his horse.
 
 ## The Horse
 
-Let's begin the story talking about the horse.  I loved him.
+Let's begin the story talking about the horse.  He was a good horse, sturdy.
 ```
+
+The `JSON` defines the meta-data about the chapter itself, in this case, the
+title: _Chapter 1 - A Vision_.   This title is used to both construct the table
+of contents, as well as populate the title of each chapter or preface.
