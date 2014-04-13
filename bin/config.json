@@ -1,6 +1,6 @@
 {
   "themes": {
-    "default": "./themes/default"
+    "default": "./themes/html/default"
   },
   "theme": "default"
 }

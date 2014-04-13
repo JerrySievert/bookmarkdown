@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://brick.a.ssl.fastly.net/Lato:300);
+@import url(http://brick.a.ssl.fastly.net/Libre+Baskerville:400)
 @import url(http://brick.a.ssl.fastly.net/Source+Code+Pro:400);
 
 * {
@@ -15,7 +16,7 @@ body {
   margin: 0;
   font-size: 16px;
   line-height: 1.8em;
-  font-family: Georgia, Palatino, serif;
+  font-family: Libre Baskerville, Georgia, Palatino, serif;
 }
 
 h1, h2, h3, h4 {
