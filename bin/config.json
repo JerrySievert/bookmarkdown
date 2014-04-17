@@ -2,5 +2,20 @@
   "themes": {
     "default": "./themes/html/default"
   },
-  "theme": "default"
+  "theme": "default",
+  "pdf": {
+    "paper": "LETTER",
+    "themes": {
+      "default": {
+        "renderer": "pdf",
+        "title": {
+          "top": "200",
+          "left": "center",
+          "author": {
+            "display": true
+          }
+        }
+      }
+    }
+  }
 }
