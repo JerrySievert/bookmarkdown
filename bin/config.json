@@ -5,6 +5,7 @@
   "theme": "default",
   "pdf": {
     "paper": "LETTER",
+    "titlefont": "./",
     "themes": {
       "default": {
         "renderer": "pdf",

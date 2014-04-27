@@ -95,7 +95,7 @@ function processBook(bookFile, outDirectory) {
     title: results.title,
     subtitle: results.subtitle,
     author: results.author.firstname + " " + results.author.lastname,
-    preface: preface.text,
+    preface: preface ? preface.text : null,
     chapters: chapters,
     table: toc
   });
