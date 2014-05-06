@@ -1,0 +1,29 @@
+%%%
+{
+  "title": "Rendering"
+}
+%%%
+Rendering a book is straightforward.  Currently, only rendering to _HTML_ is supported,
+but once it is rendered to _HTML_, it can be saved as a _PDF_ in a browser.
+
+_EPUB_ rendering is coming soon, but is not currently there, nor is _MOBI_.
+
+```
+$ bmd2html --book book.json
+```
+
+This will render the book described in `book.json` into a directory called _out_.
+
+There are additional options for rendering available.
+
+```
+$ bmd2html
+Convert BookMarkDown to HTML
+Usage bmd2html
+
+Options:
+  --theme   theme to use                 [default: "default"]
+  --out     output directory             [default: "./out"]
+  --config  optional configuration file
+  --book    bookmarkdown file            [required]
+```

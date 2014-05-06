@@ -29,3 +29,14 @@ Doing this installs two tools, `initbmd` which creates you a new skeleton copy
 of a book, and `bmd2html` which converts a book into HTML format for display on
 the web.  More formats are in the works, including native support for PDF and
 MOBI.  These will be added as addition commands.
+
+## Creating a Book
+
+Creating the skeleton of a book is easy.  This can be done by running a single command.
+
+```
+$ initbmd mybook
+```
+
+This will create a directory called _mybook_ containing a starter `book.json` file
+as well as an empty chapter.
