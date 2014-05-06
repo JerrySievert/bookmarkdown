@@ -3,7 +3,6 @@
 var argv = require('optimist')
     .default('theme', 'default')
     .default('out', './out')
-    .default('book', 'book.json')
     .demand('book')
     .usage('Convert BookMarkDown to HTML\nUsage bmd2html')
     .describe('theme', 'theme to use')
