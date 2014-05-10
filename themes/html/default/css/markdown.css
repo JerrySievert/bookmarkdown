@@ -6,6 +6,7 @@ body {
   font-family: Georgia, Palatino, serif;
   color: #444444;
   line-height: 1;
+  text-align: justify;
 }
 h1, h2, h3, h4 {
   font-family: Lato, Helvetica;
@@ -62,7 +63,7 @@ p, ul, ol {
   line-height: 24px;
 }
 pre {
-  padding: 0px 24px;
+  padding: 12px 24px;
   max-width: 80%;
   white-space: pre-wrap;
   line-height: 18px;
@@ -81,9 +82,8 @@ aside {
 }
 blockquote {
   border-left:.5em solid #eee;
-  padding: 0 2em;
-  margin-left:0;
-  max-width: 476px;
+  margin-left: 5%;
+  padding-left: 2em;
 }
 blockquote cite {
   font-size:14px;
@@ -95,7 +95,10 @@ blockquote cite:before {
 }
 blockquote p {
   color: #666;
-  max-width: 460px;
+  max-width: 90%;
+}
+blockquote p:first-child::first-letter {
+  font-size: 1em !important;
 }
 hr {
   width: 540px;
@@ -104,3 +107,26 @@ hr {
   color: #999;
 }
 
+table {
+  margin-left: 20%;
+  width: 60%;
+  border: 1px solid #333;
+}
+
+th {
+  border-bottom: 1px solid #333;
+}
+
+td {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
