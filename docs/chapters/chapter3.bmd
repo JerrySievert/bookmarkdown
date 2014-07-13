@@ -1,0 +1,56 @@
+%%%
+{
+  "title": "Configuration"
+}
+%%%
+BookMarkDown can be configured with an optional `JSON` configuration file.  This file
+can be used to give tighter control of some aspects of the rendering system.
+
+### Themes
+
+Themes allow for altering the look and feel of the rendering of BookMarkDown.  A theme
+can be configured as either a `String` or a `Directory`.  If the theme is a `String`,
+it will be used to select which theme, by name, to use.
+
+```
+{
+  "theme": "default"
+}
+```
+
+The default theme is titled "default", and refers to the theme in the `themes/html`
+directory of the BookMarkDown project.
+
+If a theme is configured as an `Object`, it contains specific aspects to the theme.
+
+```
+{
+  "theme": {
+    "directory": "./myCustomTheme"
+  }
+}
+```
+
+If a "themes" `Object` is present, it defines all properties of named themes.  This
+is used internally for mapping of theme names to theme properties, but can be overridden
+in the configuration file.
+
+```
+{
+  "themes": {
+    "default": "./themes/html/default"
+  }
+}
+```
+
+### Additional Configuration
+
+Other configuration options are available to help control how rendering is done.
+
+Chapter numbers can be turned off with a "no chapter numbers" directive.
+
+```
+{
+  "no chapter numbers": true
+}
+```

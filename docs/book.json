@@ -8,6 +8,7 @@
   "preface": "chapters/preface.bmd",
   "chapters": [
     "chapters/chapter1.bmd",
-    "chapters/chapter2.bmd"
+    "chapters/chapter2.bmd",
+    "chapters/chapter3.bmd"
   ]
 }

@@ -115,11 +115,12 @@ table {
 
 th {
   border-bottom: 1px solid #333;
+  padding-left: 24px;
 }
 
 td {
   margin: 0;
-  padding: 0;
+  padding-left: 8px;
   border: none;
 }
 
