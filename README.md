@@ -4,6 +4,8 @@ A work in progress book building system.  BookMarkDown is very much alpha qualit
 
 There is currently one theme, and it only creates HTML output (PDF, and eBook support in the works).
 
+[Documentation](https://jerrysievert.github.io/bookmarkdown/) is available to help get you started.
+
 ## Getting Started
 
 ### Installing
