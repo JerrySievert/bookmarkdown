@@ -1,0 +1,120 @@
+@import url(http://brick.a.ssl.fastly.net/Lato:300);
+@import url(http://brick.a.ssl.fastly.net/Libre+Baskerville:400)
+@import url(http://brick.a.ssl.fastly.net/Source+Code+Pro:400);
+
+* {
+  margin: 0;
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  background-color: white;
+  color: black;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8em;
+  font-family: Libre Baskerville, Georgia, Palatino, serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: Lato, Helvetica;
+  color: #111111;
+  font-weight: 300;
+}
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+}
+h1 {
+  font-size: 30px;
+  margin: 20px 0 6px;
+}
+h2 {
+  font-size: 22px;
+  margin: 20px 0 6px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+a {
+  color: #0099ff;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+a:hover {
+  text-decoration: none;
+  color: #ff6600;
+}
+a:visited {
+  color: purple;
+}
+ul, ol {
+  padding: 0;
+  margin: 0;
+  margin-left: 24px;
+}
+li {
+  line-height: 24px;
+}
+li ul, li ul {
+  margin-left: 24px;
+}
+p, ul, ol {
+  font-size: 16px;
+  line-height: 24px;
+}
+p {
+  padding-top: 16px;
+}
+pre {
+  padding: 12px 24px;
+  max-width: 80%;
+  white-space: pre-wrap;
+  line-height: 18px;
+  background-color: #eee;
+  margin-left: 5%;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+code {
+  font-family: Source Code Pro, Consolas, Monaco, Andale Mono, monospace;
+  font-size: 13px;
+}
+aside {
+  display: block;
+  float: right;
+  width: 390px;
+}
+blockquote {
+  border-left:.5em solid #eee;
+  padding: 0 2em;
+  margin-left:0;
+  max-width: 476px;
+}
+blockquote cite {
+  font-size:14px;
+  line-height:20px;
+  color:#bfbfbf;
+}
+blockquote cite:before {
+  content:'\2014 \00A0';
+}
+blockquote p {
+  color: #666;
+  max-width: 460px;
+}
+hr {
+  width: 540px;
+  text-align: left;
+  margin: 0 auto 0 0;
+  color: #999;
+}

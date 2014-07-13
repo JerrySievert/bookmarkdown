@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/markdown.css">
+    <title>BookMarkDown</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1 class="book-title">BookMarkDown</h1>
+      <h2 class="book-subtitle">Documentation</h2>
+      <h2 class="book-author">Jerry Sievert</h2>
+    </div>
+    <!-- toc -->
+    <div class="toc">
+  <ul><li><a href="#introduction">Introduction</a></li><li><a href="#anatomy">Anatomy</a></li><li><a href="#rendering">Rendering</a></li><li><a href="#configuration">Configuration</a></li></ul>
+</div>
+    <!-- contents -->
+    <div class="contents">
+    <!-- preface -->
+    <div class="chapter">
+  <a name="introduction"></a>
+  <h2 class="chapter-title">Introduction</h2>
+  <div class="chapter-text">
+    <p>Welcome to BookMarkDown.  This document will give you an overview of BookMarkDown,
+how it works, how to configure it, and how to publish your own books.</p>
+<h2 id="what-is-bookmarkdown-">What is BookMarkDown?</h2>
+<p>BookMarkDown is a self-publishing system using <code>JSON</code> and <code>MarkDown</code>.  It
+enables people with a moderate amount of experience with <code>MarkDown</code> and <code>JSON</code>
+to publish a book with very little work.  BookMarkDown includes themes for HTML
+and PDF output, as well as the ability to customize the look and feel of the
+output.</p>
+<p>BookMarkDown is ever-evolving, but aims to be backward-compatible as it grows.</p>
+<h2 id="installing">Installing</h2>
+<p>Installation is straight-forward as long as you have <a href="http://nodejs.org/">Node.js</a>
+installed.  BookMarkDown can be installed using the Node Package Manager:</p>
+<pre><code>$ npm install -g bookmarkdown
+</code></pre><p>Doing this installs two tools, <code>initbmd</code> which creates you a new skeleton copy
+of a book, and <code>bmd2html</code> which converts a book into HTML format for display on
+the web.  More formats are in the works, including native support for PDF and
+MOBI.  These will be added as addition commands.</p>
+<h2 id="creating-a-book">Creating a Book</h2>
+<p>Creating the skeleton of a book is easy.  This can be done by running a single command.</p>
+<pre><code>$ initbmd mybook
+</code></pre><p>This will create a directory called <em>mybook</em> containing a starter <code>book.json</code> file
+as well as an empty chapter.</p>
+
+  </div>
+</div>
+    <!-- chapters -->
+    
+    <div class="chapter">
+  <a name="anatomy"></a>
+  <h2 class="chapter-title">Anatomy</h2>
+  <div class="chapter-text">
+    <p>A BookMarkDown book is separated into two parts, the <code>book.json</code> file, and
+subsequent chapters.  These are matched with a <code>theme</code>, which includes styling
+choices and rendered into a final book.</p>
+<h2 id="the-skeleton">The Skeleton</h2>
+<p>The skeleton of a BookMarkDown book is the <code>book.json</code> file.  The <code>book.json</code>
+file describes the meta aspects of the book, including the title, author, and
+the makeup of the book itself.</p>
+<p>This is an example of a BookMarkDown <code>book.json</code> file:</p>
+<pre><code class="lang-js">{
+  &quot;title&quot;: &quot;BookMarkDown&quot;,
+  &quot;subtitle&quot;: &quot;Documentation&quot;,
+  &quot;author&quot;: {
+      &quot;firstname&quot;: &quot;Jerry&quot;,
+      &quot;lastname&quot;: &quot;Sievert&quot;
+  },
+  &quot;preface&quot;: &quot;chapters/preface.bmd&quot;,
+  &quot;chapters&quot;: [
+    &quot;chapters/chapter1.bmd&quot;
+  ]
+}
+</code></pre>
+<p>This defines the title, subtitle, author, preface, and chapters of the book.
+Each instance of a chapter and a preface is built of a <code>.bmd</code> file, a hybrid
+of <code>JSON</code> and <code>MarkDown</code>.</p>
+<h2 id="-bmd-files">.bmd Files</h2>
+<p><code>.bmd</code> files are broken down into two parts: <code>JSON</code> and <code>MarkDown</code> separated by
+a delimiter, <code>%%%</code>.  The <code>JSON</code> defines the parameters of the chapter, and the
+<code>MarkDown</code> defines the text of the chapter itself.</p>
+<pre><code>%%%
+{
+  &quot;title&quot;: &quot;Chapter 1 - A Vision&quot;
+}
+%%%
+This is the story of a man and his horse.
+
+## The Horse
+
+Let&#39;s begin the story talking about the horse.  He was a good horse, sturdy.
+</code></pre><p>The <code>JSON</code> defines the meta-data about the chapter itself, in this case, the
+title: <em>Chapter 1 - A Vision</em>.   This title is used to both construct the table
+of contents, as well as populate the title of each chapter or preface.</p>
+
+  </div>
+</div>
+    
+    <div class="chapter">
+  <a name="rendering"></a>
+  <h2 class="chapter-title">Rendering</h2>
+  <div class="chapter-text">
+    <p>Rendering a book is straightforward.  Currently, only rendering to <em>HTML</em> is supported,
+but once it is rendered to <em>HTML</em>, it can be saved as a <em>PDF</em> in a browser.</p>
+<p><em>EPUB</em> rendering is coming soon, but is not currently there, nor is <em>MOBI</em>.</p>
+<pre><code>$ bmd2html --book book.json
+</code></pre><p>This will render the book described in <code>book.json</code> into a directory called <em>out</em>.</p>
+<p>There are additional options for rendering available.</p>
+<pre><code>$ bmd2html
+Convert BookMarkDown to HTML
+Usage bmd2html
+
+Options:
+  --theme   theme to use                 [default: &quot;default&quot;]
+  --out     output directory             [default: &quot;./out&quot;]
+  --config  optional configuration file
+  --book    bookmarkdown file            [required]
+</code></pre>
+  </div>
+</div>
+    
+    <div class="chapter">
+  <a name="configuration"></a>
+  <h2 class="chapter-title">Configuration</h2>
+  <div class="chapter-text">
+    <p>BookMarkDown can be configured with an optional <code>JSON</code> configuration file.  This file
+can be used to give tighter control of some aspects of the rendering system.</p>
+<h3 id="themes">Themes</h3>
+<p>Themes allow for altering the look and feel of the rendering of BookMarkDown.  A theme
+can be configured as either a <code>String</code> or a <code>Directory</code>.  If the theme is a <code>String</code>,
+it will be used to select which theme, by name, to use.</p>
+<pre><code>{
+  &quot;theme&quot;: &quot;default&quot;
+}
+</code></pre><p>The default theme is titled &quot;default&quot;, and refers to the theme in the <code>themes/html</code>
+directory of the BookMarkDown project.</p>
+<p>If a theme is configured as an <code>Object</code>, it contains specific aspects to the theme.</p>
+<pre><code>{
+  &quot;theme&quot;: {
+    &quot;directory&quot;: &quot;./myCustomTheme&quot;
+  }
+}
+</code></pre><p>If a &quot;themes&quot; <code>Object</code> is present, it defines all properties of named themes.  This
+is used internally for mapping of theme names to theme properties, but can be overridden
+in the configuration file.</p>
+<pre><code>{
+  &quot;themes&quot;: {
+    &quot;default&quot;: &quot;./themes/html/default&quot;
+  }
+}
+</code></pre>
+  </div>
+</div>
+    
+    </div>
+  </body>
+</html>
