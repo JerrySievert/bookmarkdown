@@ -1,6 +1,6 @@
 {
   "name": "bookmarkdown",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "books in markdown +",
   "main": "index.js",
   "scripts": {
